@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paymentformexample</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <script src="index.js"></script>
+</head>
+
+<body class="my-2">
+
+    <div class="container border border-secondary p-3">
+        <div class="row">
+            <div class="col justify-content-end bg-light p-3">
+                <h1>Payment form example</h1>
+            </div>
+        </div>
+
+        <div class="alert alert-danger my-4" role="alert">
+            Some fiel are missing!
+        </div>
+
+        <form id="myForm" name="myForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Card</label>
+                    <input name="card" type="number" class="form-control" placeholder="xxxxxxxxxxxx">
+                </div>
+                <div class="form-group col-md-2">
+                    <label>CVC#</label>
+                    <input type="number" class="form-control" placeholder="0000">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Amount</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>First Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-4">
+                    <label>City</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>State</label>
+                    <div>
+                        <select class="form-control mb-4" label="Default select example">
+                            <option selected>Choose your state</option>
+                            <option value="1">New York</option>
+                            <option value="2">Florida</option>
+                            <option value="3">North Caroline</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Postal Code</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+
+            <!--radious tarjetas-->
+            <div class="form-row ">
+                <div class="form-group col-md-6 ">
+                    <h5>We accept</h5>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">
+                            <i class="fab fa-cc-visa"></i>
+                        </label>
+                    </div>
+                    <!--mastercard-->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">
+                            <i class="fab fa-cc-mastercard"></i>
+                        </label>
+                    </div>
+                    <!--tarjeta de credito-->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">
+                            <i class="fab fa-cc-amex"></i>
+                        </label>
+                    </div>
+                    <!--tarjeta de credito-->
+                    <div class="form-check form-check-inline ">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">
+                            <i class="fab fa-cc-diners-club"></i>
+                        </label>
+                    </div>
+                </div>
+                <!--textarea-->
+                <div class="form-group col-md-6 ">
+                    <div class="form-group mx-5">
+                        <label for="comment">Message:</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <label for="comment">Add any notes here</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row d-flex justify-content-end bg-light text-dark p-3">
+                <button type="button" class="btn btn-secondary mx-3">Cancel</button>
+                <button type="submit" class="btn btn-primary mx-3">Send</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

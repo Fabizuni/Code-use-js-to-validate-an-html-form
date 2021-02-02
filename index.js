@@ -3,7 +3,7 @@ window.onload = function () {
     element.addEventListener('submit', event => {
         event.preventDefault();
         // actual logic, e.g. validate the form
-        validateForm();
+        onSubmit();
     });
 
 }
@@ -15,10 +15,32 @@ function validateForm() {
         const input = inputs[index];
 
         if (!input.value && input.type !== 'button' && input.type !== 'submit') {
-            alert ('llenar todos los espacios');
-            return;
+            return false;
         }
     }
 
-    alert('el form es valido');
+    return true
+}
+
+function onSubmit() {
+    const isValid = validateForm();
+    if (isValid) {
+        document.getElementById("alertMissing").classList.remove("show")
+        const inputs = document.getElementById("myForm").elements;
+        for (let index = 0; index < inputs.length; index++) {
+            const input = inputs[index];
+            if (input.type !== 'button' && input.type !== 'submit') {
+                input.classList.remove("is-invalid")
+            }
+        }
+    } else {
+        document.getElementById("alertMissing").classList.add("show")
+        const inputs = document.getElementById("myForm").elements;
+        for (let index = 0; index < inputs.length; index++) {
+            const input = inputs[index];
+            if (input.type !== 'button' && input.type !== 'submit') {
+                input.classList.add("is-invalid")
+            }
+        }
+    }
 }
